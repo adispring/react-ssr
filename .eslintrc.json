@@ -1,6 +1,10 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
@@ -8,7 +12,9 @@
     }
   },
   "rules": {
-    "strict": 0,
-    "indent": 1
+    "indent": 1,
+    "react/jsx-filename-extension": 0,
+    "no-underscore-dangle": 0,
+    "comma-dangle": 0
   }
 }

@@ -40,4 +40,28 @@ module.exports = [
       ],
     },
   },
+  {
+    mode: 'development',
+    entry: [path.resolve(path.join(__dirname, './src/app/browser.js'))],
+    output: {
+      path: path.resolve(__dirname, './dist/assets'),
+      publicPath: '/',
+      filename: 'bundle.js',
+    },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {
+            babelrc: true,
+          },
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
+  },
 ];
