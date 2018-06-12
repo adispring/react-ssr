@@ -95,7 +95,7 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _index = __webpack_require__(/*! ../src/index.js */ \"./src/index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nvar _template = __webpack_require__(/*! ./template */ \"./server/template.js\");\n\nvar _template2 = _interopRequireDefault(_template);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar port = 8080;\nvar server = (0, _express2.default)();\n\nserver.use('/assets', _express2.default.static('assets'));\nserver.get('/', function (req, res) {\n  var isMobile = true;\n  var initialState = { isMobile: isMobile };\n  var appString = (0, _server.renderToString)(_react2.default.createElement(_index2.default, initialState));\n\n  res.send((0, _template2.default)({\n    body: appString,\n    title: 'From Server',\n    initialState: JSON.stringify(initialState)\n  }));\n});\n\nserver.listen(port);\nconsole.log('Server is listening ' + port);\n\n//# sourceURL=webpack:///./server/server.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _App = __webpack_require__(/*! ../src/components/App */ \"./src/components/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _template = __webpack_require__(/*! ./template */ \"./server/template.js\");\n\nvar _template2 = _interopRequireDefault(_template);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar port = 8080;\nvar server = (0, _express2.default)();\n\nserver.use('/assets', _express2.default.static('assets'));\nserver.get('/', function (req, res) {\n  var isMobile = true;\n  var initialState = { isMobile: isMobile };\n  var appString = (0, _server.renderToString)(_react2.default.createElement(_App2.default, initialState));\n\n  res.send((0, _template2.default)({\n    body: appString,\n    title: 'From Server',\n    initialState: JSON.stringify(initialState)\n  }));\n});\n\nserver.listen(port, function () {\n  console.log('Server is listening ' + port);\n});\n\n//# sourceURL=webpack:///./server/server.js?");
 
 /***/ }),
 
@@ -111,15 +111,15 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/components/App.js":
+/*!*******************************!*\
+  !*** ./src/components/App.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"prop-types\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'hello world ',\n      props.isMobile ? 'mobile' : 'desktop'\n    )\n  );\n};\n\nApp.propTypes = {\n  isMobile: _propTypes2.default.bool.isRequired\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"prop-types\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'hello world ',\n      props.isMobile ? 'mobile' : 'desktop'\n    )\n  );\n};\n\nApp.propTypes = {\n  isMobile: _propTypes2.default.bool.isRequired\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/components/App.js?");
 
 /***/ }),
 

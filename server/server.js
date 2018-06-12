@@ -1,7 +1,7 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from '../src';
+import App from '../src/components/App';
 import template from './template';
 
 const port = 8080;
@@ -22,5 +22,6 @@ server.get('/', (req, res) => {
   );
 });
 
-server.listen(port);
-console.log(`Server is listening ${port}`);
+server.listen(port, () => {
+  console.log(`Server is listening ${port}`);
+});

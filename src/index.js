@@ -1,14 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { render } from 'react-dom';
+import App from './index';
 
-const App = props => (
-  <div>
-    <h1>hello world {props.isMobile ? 'mobile' : 'desktop'}</h1>
-  </div>
+render(
+  <App {...window.__APP_INITIAL_STATE__} />,
+  document.getElementById('root')
 );
-
-App.propTypes = {
-  isMobile: PropTypes.bool.isRequired,
-};
-
-export default App;

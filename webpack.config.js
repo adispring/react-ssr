@@ -42,7 +42,7 @@ module.exports = [
   },
   {
     mode: 'development',
-    entry: [path.resolve(path.join(__dirname, './src/browser.js'))],
+    entry: [path.resolve(path.join(__dirname, './src/index.js'))],
     output: {
       path: path.resolve(__dirname, './dist/assets'),
       publicPath: '/',
