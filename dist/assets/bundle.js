@@ -361,38 +361,38 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
-/***/ "./src/app/browser.jsx":
-/*!*****************************!*\
-  !*** ./src/app/browser.jsx ***!
-  \*****************************/
+/***/ "./src/browser.js":
+/*!************************!*\
+  !*** ./src/browser.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _index = __webpack_require__(/*! ./index */ \"./src/app/index.jsx\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.render)(_react2.default.createElement(_index2.default, window.__APP_INITIAL_STATE__), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/app/browser.jsx?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _index = __webpack_require__(/*! ./index */ \"./src/index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.render)(_react2.default.createElement(_index2.default, window.__APP_INITIAL_STATE__), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/browser.js?");
 
 /***/ }),
 
-/***/ "./src/app/index.jsx":
-/*!***************************!*\
-  !*** ./src/app/index.jsx ***!
-  \***************************/
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'hello world ',\n      props.isMobile ? 'mobile' : 'desktop'\n    )\n  );\n};\n\nApp.propTypes = {\n  isMobile: _propTypes2.default.bool.isRequired\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/app/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'hello world ',\n      props.isMobile ? 'mobile' : 'desktop'\n    )\n  );\n};\n\nApp.propTypes = {\n  isMobile: _propTypes2.default.bool.isRequired\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
 /***/ 0:
-/*!***********************************!*\
-  !*** multi ./src/app/browser.jsx ***!
-  \***********************************/
+/*!******************************!*\
+  !*** multi ./src/browser.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! /Users/adi/zengdi/JavaScript/playground/react-ssr-adi/src/app/browser.jsx */\"./src/app/browser.jsx\");\n\n\n//# sourceURL=webpack:///multi_./src/app/browser.jsx?");
+eval("module.exports = __webpack_require__(/*! /Users/adi/zengdi/JavaScript/playground/react-ssr/src/browser.js */\"./src/browser.js\");\n\n\n//# sourceURL=webpack:///multi_./src/browser.js?");
 
 /***/ })
 

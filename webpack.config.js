@@ -14,7 +14,7 @@ const productionPluginDefine = isProduction
 module.exports = [
   {
     mode: 'development',
-    entry: [path.resolve(path.join(__dirname, './src/server.js'))],
+    entry: [path.resolve(path.join(__dirname, './server/server.js'))],
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'server.js',
@@ -42,7 +42,7 @@ module.exports = [
   },
   {
     mode: 'development',
-    entry: [path.resolve(path.join(__dirname, './src/app/browser.js'))],
+    entry: [path.resolve(path.join(__dirname, './src/browser.js'))],
     output: {
       path: path.resolve(__dirname, './dist/assets'),
       publicPath: '/',
