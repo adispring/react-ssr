@@ -12,7 +12,6 @@
     }
   },
   "rules": {
-    "indent": 1,
     "react/jsx-filename-extension": 0,
     "no-underscore-dangle": 0,
     "comma-dangle": 0
