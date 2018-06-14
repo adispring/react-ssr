@@ -1,14 +1,14 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from '../src/components/App';
+import App from '../src/index';
 import template from './template';
 
 const port = 8080;
 const server = express();
 
 server.use('/assets', express.static('assets'));
-server.get('/', (req, res) => {
+server.get('/adi', (req, res) => {
   const isMobile = true;
   const initialState = { isMobile };
   const appString = renderToString(<App {...initialState} />);
