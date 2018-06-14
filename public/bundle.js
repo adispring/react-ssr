@@ -851,50 +851,38 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 
 /***/ }),
 
-/***/ "./src/container/About.js":
-/*!********************************!*\
-  !*** ./src/container/About.js ***!
-  \********************************/
+/***/ "./src/client/index.js":
+/*!*****************************!*\
+  !*** ./src/client/index.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar About = function About(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'About ',\n      props.about\n    )\n  );\n};\n\nAbout.propTypes = {\n  about: _propTypes2.default.bool.isRequired\n};\n\nexports.default = About;\n\n//# sourceURL=webpack:///./src/container/About.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _App = __webpack_require__(/*! ../shared/App */ \"./src/shared/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.hydrate)(_react2.default.createElement(\n  _reactRouterDom.BrowserRouter,\n  null,\n  _react2.default.createElement(_App2.default, null)\n), document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/client/index.js?");
 
 /***/ }),
 
-/***/ "./src/container/Home.js":
-/*!*******************************!*\
-  !*** ./src/container/Home.js ***!
-  \*******************************/
+/***/ "./src/shared/App.js":
+/*!***************************!*\
+  !*** ./src/shared/App.js ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'h1',\n      null,\n      'Welcom ',\n      props.user\n    )\n  );\n};\n\nHome.propTypes = {\n  user: _propTypes2.default.bool.isRequired\n};\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/container/Home.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _Home = __webpack_require__(/*! ./container/Home */ \"./src/container/Home.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nvar _About = __webpack_require__(/*! ./container/About */ \"./src/container/About.js\");\n\nvar _About2 = _interopRequireDefault(_About);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.render)(_react2.default.createElement(\n  _reactRouterDom.BrowserRouter,\n  null,\n  _react2.default.createElement(\n    'main',\n    null,\n    _react2.default.createElement(\n      _reactRouterDom.Switch,\n      null,\n      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),\n      _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _About2.default })\n    )\n  )\n), document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  return _react2.default.createElement(\n    'main',\n    null,\n    'Hello, World'\n  );\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/shared/App.js?");
 
 /***/ }),
 
 /***/ 0:
-/*!****************************!*\
-  !*** multi ./src/index.js ***!
-  \****************************/
+/*!***********************************!*\
+  !*** multi ./src/client/index.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! /Users/adi/zengdi/JavaScript/playground/react-ssr/src/index.js */\"./src/index.js\");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?");
+eval("module.exports = __webpack_require__(/*! /Users/adi/zengdi/JavaScript/playground/react-ssr/src/client/index.js */\"./src/client/index.js\");\n\n\n//# sourceURL=webpack:///multi_./src/client/index.js?");
 
 /***/ })
 

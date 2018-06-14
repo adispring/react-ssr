@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd dist && node server",
+    "start": "webpack -w & nodemon server.js",
     "build": "webpack --config webpack.config.js",
     "lint": "eslint src"
   },
@@ -14,6 +14,7 @@
   "dependencies": {
     "babel-eslint": "^8.2.3",
     "express": "^4.16.3",
+    "nodemon": "^1.17.5",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

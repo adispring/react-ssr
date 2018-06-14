@@ -2,21 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 
-const isProduction = process.env.NODE_ENV === 'production';
-const productionPluginDefine = isProduction
-  ? [
-      new webpack.DefinePlugin({
-        'process.env': { NODE_ENV: JSON.stringify('production') },
-      }),
-    ]
-  : [];
-
 module.exports = [
   {
     mode: 'development',
-    entry: [path.resolve(path.join(__dirname, './server/server.js'))],
+    entry: [path.resolve(path.join(__dirname, './src/server/index.js'))],
     output: {
-      path: path.resolve(__dirname, './dist'),
+      path: __dirname,
       filename: 'server.js',
       libraryTarget: 'commonjs2',
       publicPath: '/',
@@ -27,24 +18,20 @@ module.exports = [
     },
     target: 'node',
     externals: [nodeExternals()],
-    plugins: productionPluginDefine,
     module: {
       rules: [
         {
           test: /\.jsx?$/,
           loader: 'babel-loader',
-          options: {
-            babelrc: true,
-          },
         },
       ],
     },
   },
   {
     mode: 'development',
-    entry: [path.resolve(path.join(__dirname, './src/index.js'))],
+    entry: [path.resolve(path.join(__dirname, './src/client/index.js'))],
     output: {
-      path: path.resolve(__dirname, './dist/assets'),
+      path: path.resolve(__dirname, 'public'),
       publicPath: '/',
       filename: 'bundle.js',
     },
@@ -54,9 +41,6 @@ module.exports = [
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-          options: {
-            babelrc: true,
-          },
         },
       ],
     },
