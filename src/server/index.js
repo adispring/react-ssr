@@ -1,14 +1,17 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+
 import App from '../shared/App';
 
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 const server = express();
 
 server.use(express.static('public'));
+
 server.get('*', (req, res, next) => {
-  const markup = renderToString(<App />);
+  const markup = renderToString(<App data="Tyler" />);
+
   console.log(`New request, url: ${req.url}`);
   console.log(`markup: ${markup}`);
 
@@ -27,6 +30,6 @@ server.get('*', (req, res, next) => {
   `);
 });
 
-server.listen(port, () => {
-  console.log(`Server is listening on port: ${port}`);
+server.listen(PORT, () => {
+  console.log(`Server is listening on PORT: ${PORT}`);
 });

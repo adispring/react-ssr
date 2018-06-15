@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './style.css';
 
-const App = () => <main className={style.hello}>Hello, World, haha</main>;
+const App = props => <main className={style.hello}>Hello, {props.data}</main>;
 
+App.propTypes = {
+  data: PropTypes.string.isRequired,
+};
 export default App;

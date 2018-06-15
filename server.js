@@ -78,7 +78,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/public";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -130,7 +130,7 @@ eval("\n\nvar _stringify = __webpack_require__(/*! babel-runtime/core-js/json/st
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _App = __webpack_require__(/*! ../shared/App */ \"./src/shared/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar port = 8080;\nvar server = (0, _express2.default)();\n\nserver.use(_express2.default.static('public'));\nserver.get('*', function (req, res, next) {\n  var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, null));\n  console.log('New request, url: ' + req.url);\n  console.log('markup: ' + markup);\n\n  res.send('\\n    <!DOCTYPE html>\\n    <html>\\n      <head>\\n        <title>SSR with RR</title>\\n        <script src=\"/bundle.js\" defer></script>\\n        <link rel = \"stylesheet\" type = \"text/css\" href = \"/main.css\" />\\n      </head>\\n      <body>\\n        <div id=\"app\">' + markup + '</div>\\n      </body>\\n    </html>\\n  ');\n});\n\nserver.listen(port, function () {\n  console.log('Server is listening on port: ' + port);\n});\n\n//# sourceURL=webpack:///./src/server/index.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _App = __webpack_require__(/*! ../shared/App */ \"./src/shared/App.js\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar PORT = process.env.PORT || 8080;\nvar server = (0, _express2.default)();\n\nserver.use(_express2.default.static('public'));\n\nserver.get('*', function (req, res, next) {\n  var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, { data: 'Tyler' }));\n\n  console.log('New request, url: ' + req.url);\n  console.log('markup: ' + markup);\n\n  res.send('\\n    <!DOCTYPE html>\\n    <html>\\n      <head>\\n        <title>SSR with RR</title>\\n        <script src=\"/bundle.js\" defer></script>\\n        <link rel = \"stylesheet\" type = \"text/css\" href = \"/main.css\" />\\n      </head>\\n      <body>\\n        <div id=\"app\">' + markup + '</div>\\n      </body>\\n    </html>\\n  ');\n});\n\nserver.listen(PORT, function () {\n  console.log('Server is listening on PORT: ' + PORT);\n});\n\n//# sourceURL=webpack:///./src/server/index.js?");
 
 /***/ }),
 
@@ -142,7 +142,7 @@ eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _style = __webpack_require__(/*! ./style.css */ \"./src/shared/style.css\");\n\nvar _style2 = _interopRequireDefault(_style);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  return _react2.default.createElement(\n    'main',\n    { className: _style2.default.hello },\n    'Hello, World, haha'\n  );\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/shared/App.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"prop-types\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nvar _style = __webpack_require__(/*! ./style.css */ \"./src/shared/style.css\");\n\nvar _style2 = _interopRequireDefault(_style);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(props) {\n  return _react2.default.createElement(\n    'main',\n    { className: _style2.default.hello },\n    'Hello, ',\n    props.data\n  );\n};\n\nApp.propTypes = {\n  data: _propTypes2.default.string.isRequired\n};\nexports.default = App;\n\n//# sourceURL=webpack:///./src/shared/App.js?");
 
 /***/ }),
 
@@ -198,6 +198,17 @@ eval("module.exports = require(\"babel-runtime/helpers/slicedToArray\");\n\n//# 
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"prop-types\");\n\n//# sourceURL=webpack:///external_%22prop-types%22?");
 
 /***/ }),
 

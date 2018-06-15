@@ -7,7 +7,7 @@ import App from '../shared/App';
 
 hydrate(
   <BrowserRouter>
-    <App />
+    <App data="Tyler" />
   </BrowserRouter>,
   document.getElementById('app')
 );
