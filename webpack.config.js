@@ -10,7 +10,10 @@ module.exports = [
   {
     name: 'client',
     target: 'web',
-    entry: [path.resolve(path.join(__dirname, './src/client/index.js'))],
+    entry: [
+      'babel-polyfill',
+      path.resolve(path.join(__dirname, './src/client/index.js')),
+    ],
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {

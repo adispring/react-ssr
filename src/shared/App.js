@@ -8,12 +8,12 @@ const App = () => (
   <div>
     <Navbar />
     <Switch>
-      {routes.map(({ path, exact, component: C, ...rest }) => (
+      {routes.map(({ path, exact, component: Comp, ...rest }) => (
         <Route
           key={path}
           path={path}
           exact={exact}
-          render={props => <C {...props} {...rest} />}
+          render={props => <Comp {...props} {...rest} />}
         />
       ))}
       <Route render={props => <NoMatch {...props} />} />
