@@ -1,10 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import style from './style.css';
+import { Switch, Route } from 'react-router-dom';
+import routes from './routes';
+import Navbar from './Navbar';
+import NoMatch from './NoMatch';
 
-const App = props => <main className={style.hello}>Hello, {props.data}</main>;
+const App = () => (
+  <div>
+    <Navbar />
+    <Switch>
+      {routes.map(({ path, exact, component: C, ...rest }) => (
+        <Route
+          key={path}
+          path={path}
+          exact={exact}
+          render={props => <C {...props} {...rest} />}
+        />
+      ))}
+      <Route render={props => <NoMatch {...props} />} />
+    </Switch>
+  </div>
+);
 
-App.propTypes = {
-  data: PropTypes.string.isRequired,
-};
 export default App;
