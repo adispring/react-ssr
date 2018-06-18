@@ -1,5 +1,9 @@
 import React from 'react';
 
-export default function Home() {
-  return <div>Select a Language</div>;
+class Home extends React.Component {
+  render() {
+    console.log(this.props);
+    return <div>Select a Language</div>;
+  }
 }
+export default Home;

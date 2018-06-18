@@ -1,12 +1,23 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from '../shared/App';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+
 import '../shared/style.css';
 
+import configureStore from '../shared/store';
+import App from '../shared/App';
+
+const initialState = window.INITIAL_STATE || {};
+delete window.INITIAL_STATE;
+
+const { history, store } = configureStore(initialState);
+
 hydrate(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
   document.getElementById('app')
 );
